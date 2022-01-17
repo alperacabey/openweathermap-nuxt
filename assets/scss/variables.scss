@@ -1,0 +1,125 @@
+// font-size
+$fs-xxl: 22px;
+$fs-xl: 20px;
+$fs-lg: 18px;
+$fs-md: 16px;
+$fs-sm: 14px;
+$fs-xs: 12px;
+$fs-xxs: 10px;
+// // line-height
+$lh-xxl: 28px;
+$lh-xl: 26px;
+$lh-lg: 22px;
+$lh-md: 20px;
+$lh-sm: 18px;
+$lh-xs: 16px;
+$lh-xxs: 14px;
+
+$bold: 700;
+$normal: 400;
+
+$transparent: transparent;
+$black: #000000;
+$blue: #4ab5e2;
+$orange: #ec6d4c;
+$white: #ffffff;
+$grey: #a9a9a9;
+$dusk: #524661;
+$green: #d4edda;
+$red: #f8d7da;
+$yellow: #fff3cd;
+$error: #de4747;
+$success: #49ca77;
+$background: #f5f5f5;
+
+$brand-colors: 
+('transparent', $transparent)
+('black', $black),
+('blue', $blue),
+('orange', $orange),
+('white', $white),
+('grey', $grey),
+('dusk', $dusk),
+('green', $green),
+('red', $red),
+('yellow', $yellow),
+('error', $error),
+('success', $success),
+('background', $background);
+
+
+@each $color in $brand-colors {
+  .color-#{nth($color,1)} {
+    color: nth($color, 2) !important;
+  };
+
+  .bg-color-#{nth($color,1)} {
+    background-color: nth($color, 2) !important;
+  };
+
+  .box-color-#{nth($color,1)} {
+    -webkit-box-shadow: inset 0 0 0 1px nth($color, 2) !important;
+    box-shadow: inset 0 0 0 1px nth($color, 2) !important;
+  };
+}
+
+@mixin no-select() {
+  /* Chrome all / Safari all */
+  -webkit-user-select: none;
+
+  /* Firefox all */
+  -moz-user-select: none;
+
+  /* IE 10+ */
+  -ms-user-select: none;
+
+  /* Likely future */
+  user-select: none;
+}
+
+@mixin opacity($param) {
+  filter: alpha(opacity=$param);
+  opacity: $param;
+}
+
+@mixin box-shadow($param) {
+  -webkit-box-shadow: $param;
+  box-shadow: $param;
+}
+
+@mixin place-holder-color($color) {
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    color: $color;
+  }
+}
+
+@mixin border-radius($param) {
+  /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+
+  /* Firefox 1-3.6 */
+
+  /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+  border-radius: $param;
+}
+
+@mixin font($size, $line-height) {
+  font-size: $size !important;
+  line-height: $line-height !important;
+}
+
+@mixin transition($property: all, $duration: .3s, $ease: linear) {
+  -webkit-transition: $property $duration $ease;
+  transition: $property $duration $ease;
+}

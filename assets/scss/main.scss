@@ -1,0 +1,32 @@
+
+@import './variables.scss';
+@import './text.scss';
+
+.border-none {
+  border: none !important;
+}
+
+
+.loader {
+  border: 3px solid #f3f3f3;
+  animation: spin 1s linear infinite;
+  border-top: 3px solid #555;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  position:absolute;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+svg {
+width: 48px;
+height: 48px;
+margin: 24px 0 0 40px;
+fill: #fff;
+}

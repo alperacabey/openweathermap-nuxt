@@ -1,0 +1,40 @@
+.fs-22 {
+  @include font($fs-xxl, $lh-xxl);
+}
+
+.fs-20 {
+  @include font($fs-xl, $lh-xl);
+}
+
+.fs-18 {
+  @include font($fs-lg, $lh-lg);
+}
+
+.fs-16 {
+  @include font($fs-md, $lh-md);
+}
+
+.fs-14 {
+  @include font($fs-sm, $lh-sm);
+}
+
+.fs-12 {
+  @include font($fs-xs, $lh-xs);
+}
+
+.fs-10 {
+  @include font($fs-xxs, $lh-xxs);
+}
+
+.ellipsis {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &-nonwhitespace{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    width:90%;
+  }
+}
